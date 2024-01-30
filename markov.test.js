@@ -13,4 +13,11 @@ describe('Testing Markov methods', function(){
     test('testing null for makeChains', function(){
         expect(markov2.makeChains()).toEqual({"the":["cat","hat","hat"],"cat":["in"],"in":["the","the"],"hat":["is",null],"is":["in"]})
     })
+    test('testing makeText method', function(){
+        let text = markov1.makeText(numWords=32)
+        let words = text.split(/[ \r\n]+/);
+        finalWords = words.filter(c => c !== "");
+
+        expect(finalWords.length).toEqual(32)
+    })
 })
